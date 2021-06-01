@@ -106,6 +106,7 @@ export default class SelectionArea extends EventTarget<SelectionEvents> {
 
     // Add class to the area element
     this._area.classList.add(this._options.class);
+    this._clippingElement.classList.add('selection-area-wrapper');
 
     // Apply basic styles to the area element
     css(this._area, {
@@ -120,7 +121,7 @@ export default class SelectionArea extends EventTarget<SelectionEvents> {
       position: 'fixed',
       transform: 'translate3d(0, 0, 0)', // https://stackoverflow.com/a/38268846
       pointerEvents: 'none',
-      zIndex: 5,
+      zIndex: 1,
     });
 
     this.enable();
